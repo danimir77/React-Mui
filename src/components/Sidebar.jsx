@@ -13,7 +13,11 @@ import GroupsIcon from "@mui/icons-material/Groups";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ModeNightIcon from "@mui/icons-material/ModeNight";
 
-export default function Sidebar() {
+export default function Sidebar({ mode, setMode }) {
+  function handleChange(e) {
+    mode === "light" ? setMode("dark") : setMode("light");
+  }
+
   return (
     <Box
       // bgcolor="lightblue"
@@ -21,7 +25,7 @@ export default function Sidebar() {
       p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      <Box sx={{position:"fixed"}}>
+      <Box sx={{ position: "fixed" }}>
         <List>
           <ListItem disablePadding>
             <ListItemButton component="a" href="#homepage">
@@ -57,7 +61,7 @@ export default function Sidebar() {
               >
                 <ModeNightIcon />
               </ListItemIcon>
-              <Switch />
+              <Switch onChange={handleChange} />
             </ListItemButton>
           </ListItem>
         </List>
