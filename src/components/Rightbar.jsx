@@ -9,7 +9,7 @@ export default function Rightbar() {
       p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      Rightbar
+      <Box sx={{ position: "fixed" }}>Rightbar</Box>
     </Box>
   );
 }

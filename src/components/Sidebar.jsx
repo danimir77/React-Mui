@@ -21,45 +21,47 @@ export default function Sidebar() {
       p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#homepage">
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Homepage" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#groups">
-            <ListItemIcon>
-              <GroupsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Groups" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#settings">
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Settings" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton component="a" href="#settings">
-            <ListItemIcon
-              sx={{
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              <ModeNightIcon />
-            </ListItemIcon>
-            <Switch />
-          </ListItemButton>
-        </ListItem>
-      </List>
+      <Box sx={{position:"fixed"}}>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="#homepage">
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Homepage" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="#groups">
+              <ListItemIcon>
+                <GroupsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Groups" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="#settings">
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Settings" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton component="a" href="#settings">
+              <ListItemIcon
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <ModeNightIcon />
+              </ListItemIcon>
+              <Switch />
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Box>
     </Box>
   );
 }

@@ -67,11 +67,11 @@ export default function Navbar() {
         open={open}
         onClose={(e) => setOpen(false)}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "Top",
           horizontal: "right",
         }}
         transformOrigin={{
-          vertical: "bottom",
+          vertical: "Top",
           horizontal: "right",
         }}
       >
