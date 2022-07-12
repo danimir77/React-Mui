@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Avatar,
@@ -6,6 +6,8 @@ import {
   Box,
   Icon,
   InputBase,
+  Menu,
+  MenuItem,
   styled,
   Toolbar,
   Typography,
@@ -34,6 +36,7 @@ const Icons = styled(Box)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   return (
     <AppBar position="sticky">
       <StyledToolbar>
@@ -54,9 +57,28 @@ export default function Navbar() {
           <Avatar
             sx={{ width: 30, height: 30 }}
             src="https://avatars.githubusercontent.com/u/73600438?v=4"
+            onClick={(e) => setOpen(true)}
           />
         </Icons>
       </StyledToolbar>
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={(e) => setOpen(false)}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "bottom",
+          horizontal: "right",
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   );
 }
