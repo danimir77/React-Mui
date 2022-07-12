@@ -41,7 +41,7 @@ export default function Navbar() {
     <AppBar position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          COIN STATS (Mui-React)
+          PROJECT Mui-React
         </Typography>
         <CurrencyBitcoinIcon sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
