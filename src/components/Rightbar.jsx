@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import itemData from "./images.json";
+import LatestConver from "./LatestConver";
 
 export default function Rightbar() {
   console.log(itemData);
@@ -19,7 +20,7 @@ export default function Rightbar() {
       // p={2}
       sx={{ display: { xs: "none", sm: "block" } }}
     >
-      <Box sx={{ position: "fixed",margin:"5px" }}>
+      <Box sx={{ position: "fixed", margin: "5px" }}>
         <Typography variant="h6" fontWeight={200}>
           Members Online
         </Typography>
@@ -33,20 +34,22 @@ export default function Rightbar() {
         <Typography variant="h6" fontWeight={200}>
           Other posts
         </Typography>
-        {/* <Stack direction="col" spacing={2} justifyContent="space-between"> */}
-          <ImageList rowHeight={100} gap={5}>
-            {itemData.images.map((item) => (
-              <ImageListItem key={item.img}>
-                <img
-                  src={`${item.img}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  alt={Math.random()}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
-        {/* </Stack> */}
+        <ImageList rowHeight={100} gap={5}>
+          {itemData.images.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                src={`${item.img}?w=248&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                alt={Math.random()}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <Typography variant="h6" fontWeight={200}>
+          Latest Conversations
+        </Typography>
+        <LatestConver/>
       </Box>
     </Box>
   );
